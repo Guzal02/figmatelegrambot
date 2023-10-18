@@ -1,0 +1,29 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/figma_telegram_bot
+    username: postgres
+    password: password
+  flyway:
+    url: jdbc:postgresql://localhost:5432/figma_telegram_bot
+    locations: classpath:db/migration
+    user: postgres
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+bot:
+  reg:
+    token: 6488528581:AAFtJ7u6Dw6HsI_ZpSBRo_-b9FyoIzj7beo
+  send:
+    token: 6012735714:AAH5nuY-Rcz3WvleSVFZSYIkkpsBNAxO9gc
+
+figma:
+  token: figd_0mQ2lxjweGAp_gIJXSERswadfl2keUrBnR2qtfrE
+
+
+

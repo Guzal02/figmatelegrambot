@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version "$springBootVersion"
+    id 'io.spring.dependency-management' version "$springDependencyManagementVersion"
+}
+
+group = 'com.example'
+version = '1.0.0'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    implementation "org.postgresql:postgresql:$postgreSqlVersion"
+
+    implementation "org.flywaydb:flyway-core:$flywayDbVersion"
+    implementation "com.google.code.findbugs:jsr305:$googleFindBugsVersion"
+
+    implementation "org.mapstruct:mapstruct:$mapStructVersion"
+
+    implementation "javax.xml.bind:jaxb-api:$jaxcApiVersion"
+
+    compileOnly "org.projectlombok:lombok:$lombok"
+    annotationProcessor "org.projectlombok:lombok:$lombok"
+    annotationProcessor "org.mapstruct:mapstruct-processor:$mapStructVersion"
+
+    implementation "org.apache.httpcomponents:httpclient:$httpClientVersion"
+    implementation "org.telegram:telegrambots:$telegramBotsVersion"
+    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
